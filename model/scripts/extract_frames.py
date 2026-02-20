@@ -4,7 +4,7 @@ import cv2
 def list_videos(input_path: str):
     print(f"List file on {input_path}")
     if os.path.isdir(input_path):
-        exts = ("*.mp4", "*.mov", "*.mkv", "*.avi", "*.MP4")
+        exts = ("*.mp4", "*.mov", "*.mkv", "*.avi", "*.MP4", "*.MOV")
         files = []
         for e in exts:
             files.extend(glob.glob(os.path.join(input_path, e)))

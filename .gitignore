@@ -3,6 +3,13 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# ignore
+backend/
+backup/
+model/
+
+Makefile
+
 # C extensions
 *.so
 
