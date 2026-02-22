@@ -1,7 +1,7 @@
 import time
 from fastapi import APIRouter
 
-from model.PostureDetectionService import postureDetectionService
+from service.PostureDetectionService import postureDetectionService
 from model.StreamConfig import StreamConfig
 
 router = APIRouter()
@@ -19,11 +19,12 @@ cfg = StreamConfig(
 # Change source to your RTSP URL if needed
 # postureDetectionService = PostureDetectionService(source=0, config=cfg)
 
-
+# Build response as video
 @router.get("/video")
 def video():
     return postureDetectionService.mjpeg_response()
 
+# Build response status
 @router.get("/status")
 def status():
     if hasattr(postureDetectionService, "get_status") and callable(getattr(postureDetectionService, "get_status")):
